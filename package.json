@@ -1,0 +1,17 @@
+{
+  "name": "manga-scrapper",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "4.1.0",
+    "fs-extra": "9.0.1",
+    "promise.allsettled": "^1.0.2",
+    "puppeteer": "5.2.1",
+    "ramda": "0.27.1"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
+  }
+}
