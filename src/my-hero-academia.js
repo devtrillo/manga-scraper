@@ -5,25 +5,21 @@ async function downloadAllComics(browser) {
       browser,
       "https://onepunchmanmangaonline.com/"
     );
-    const data = await helpers.getLinksFromSelector(
-      page,
-      "#ceo_latest_comics_widget-3 li a"
-    );
+    const data = await helpers.getLinksFromSelector(page, ".su-posts a");
     for (let i = 0; i < data.length; i++) {
       const url = data[i];
       await page.goto(url);
       await helpers.downloadAllImagesFromUrl(
         page,
-        ".entry-inner img",
-        `one-punch-man/chapter${helpers.padNumber(
+        ".entry-content img",
+        `my-hero-no-academia/chapter${helpers.padNumber(
           i + 1,
           `${data.length}`.length
-        )}`,15
+        )}`,
+        15
       );
     }
   } catch (e) {
     console.log(e);
   }
 }
-
-module.exports = downloadAllComics;
