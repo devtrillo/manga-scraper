@@ -23,3 +23,4 @@ async function downloadAllComics(browser) {
     console.log(e);
   }
 }
+module.exports=downloadAllComics
